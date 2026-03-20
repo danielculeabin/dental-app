@@ -2,24 +2,37 @@ import styled from 'styled-components/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 
-// Styles used in 'HomeScreen.js' - the main screen UI
-export const Container = styled(SafeAreaView)`
+// 1. Change to a regular View
+// We will use the 'SafeAreaView' ONLY in 'HomeScreen.js' to control 'edges' properly
+export const Container = styled.View`
   flex: 1;
-  padding: 0 20px;
   background-color: #fff;
+  /* padding: 0 20px;  //Optional */ 
 `;
 
+// 2. Tighten this up
+// If you are using the Navigation Header (blue "Patients"), you might not even need this ScreenTitle on the page!
 export const ScreenTitle = styled.Text`
   font-size: 28px;
   font-weight: 800;
   color: #111;
-  margin: 10px 0 16px;
+  margin: 0 20px 10px 20px; /* Snug to the top, keeps side padding */
+`;
+
+export const SwipeView = styled.View`
+  background-color: #F83939;
+  justify-content: center;
+  align-items: center;
+  height: 90%; /* So it doesn't touch the borders */
+  border-radius: 22px; 
+  margin-left: 5px;
+  margin-right: 5px;
 `;
 
 export const PlusButtonWrapper = styled.TouchableOpacity`
   position: absolute;
-  bottom: 55px;
-  right: 18px;
+  bottom: 25px;   /* Moved down from 55px to use the screen better */
+  right: 20px;
   border-radius: 32px;
   overflow: hidden;
   elevation: 8;

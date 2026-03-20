@@ -1,21 +1,21 @@
 import React from 'react';
-import { Text } from 'react-native';
 import styled from 'styled-components/native';
 
-const ButtonWrapper = styled.TouchableOpacity`
-  justify-content: center;
-  align-items: center;
-  border-radius: 30px;
-  background-color: ${(props) => props.color};
-  height: 45px;
-  margin-top: 20px;
-`;
+// Use parentheses () and an object {} instead of backticks ``
+const ButtonWrapper = styled.TouchableOpacity((props) => ({
+  justifyContent: 'center',
+  alignItems: 'center',
+  borderRadius: 30, // Pure number, no quotes, no px
+  backgroundColor: props.color || '#2a86ff',
+  height: 45,
+  marginTop: 20,
+}));
 
-const ButtonText = styled.Text`
-  color: #fff;
-  font-weight: 600;
-  font-size: 16px;
-`;
+const ButtonText = styled.Text({
+  color: '#fff',
+  fontWeight: '600',
+  fontSize: 16, // Pure number
+});
 
 const Button = ({ children, color = '#2a86ff' }) => {
   return (

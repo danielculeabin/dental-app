@@ -1,6 +1,7 @@
 import React, { useLayoutEffect } from 'react';
 import styled from 'styled-components/native';
-import { SafeAreaView, View, Text } from 'react-native';
+import { View, Text } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Ionicons, Foundation } from '@expo/vector-icons';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
